@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Native Rating WebComponent</title>
+    <script type="module" src="rating.js"></script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 40px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        main {
+            display: flex;
+        }
+        img {
+            height: 60px;
+            padding: 10px 0;
+            width: 60px;
+        }
+        rnjs-rating::part(icon) {
+            width: 200px;
+            height: 200px;
+            background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 166 166"><polygon fill="rgb(165,255,214)" points="83 26.8 65.7 61.8 27.1 67.4 55 94.7 48.5 133.2 83 115 117.5 133.2 111 94.7 138.9 67.4 100.3 61.8 83 26.8 83 26.8"/></svg>');
+        }    
+    </style>
+</head>
+<body>
+    <my-rating></my-rating>
+
+    <my-rating class="blue">
+        <p>Rating :host(.blue)</p>
+    </my-rating>
+
+    <main>
+        <my-rating>
+            <p>Rating :host-context(main)</p>
+            <img slot="rating-star" alt="" src="../assets/star_icon.png" />
+        </my-rating>
+    </main>
+</body>
+</html>

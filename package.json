@@ -1,0 +1,18 @@
+{
+  "name": "web-component-demo",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "webpack-dev-server src/index.html",
+    "build-wc": "npm run build-wc:clean && npm run build-wc:webpack",
+    "build-wc:clean": "rm -rf dist && mkdir dist",
+    "build-wc:webpack": "webpack"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "file-loader": "^4.2.0",
+    "html-loader": "^0.5.5",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "^3.8.0"
+  }
+}
