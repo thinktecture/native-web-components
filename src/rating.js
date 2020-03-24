@@ -76,12 +76,14 @@ export class Rating extends HTMLElement {
 
     constructor() {
         super();
+        // attach to the Shadow DOM
         const root = this.attachShadow({mode: 'closed'});
         root.appendChild(template.content.cloneNode(true));
         this.element = root.querySelector('div');
         const slot = this.element.querySelector('slot');
         this.slotNode = slot.querySelector('div');
         slot.addEventListener('slotchange', event => {
+            // Take first element of the slot and assign it as new rating star template
             const node = slot.assignedNodes()[0];
             if (node) {
                 this.slotNode = node;
