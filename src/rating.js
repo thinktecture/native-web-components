@@ -30,7 +30,6 @@ img {
 }
 p, ::slotted(p) {
     text-align: center;
-    color: rgb(61,111,180);
     font-size: 32px;
     margin: 0;
     padding: 0;
@@ -52,18 +51,21 @@ slot[name="rating-star"] {
     filter: none;
 }
 .rating-star {
-    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 166 166"><polygon fill="rgb(61,111,180)" points="83 26.8 65.7 61.8 27.1 67.4 55 94.7 48.5 133.2 83 115 117.5 133.2 111 94.7 138.9 67.4 100.3 61.8 83 26.8 83 26.8"/></svg>');
-    background-repeat: no-repeat;
+    display: block;
+    -webkit-mask-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 166 166"><polygon fill="rgb(165,255,214)" points="83 26.8 65.7 61.8 27.1 67.4 55 94.7 48.5 133.2 83 115 117.5 133.2 111 94.7 138.9 67.4 100.3 61.8 83 26.8 83 26.8"/></svg>');
+    background-color: #3d6fb4;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
     width: 80px;
     height: 80px;
 }
 </style>
 <slot>
-      <p part="title">Rating :host</p>
+      <p part="title">Rating Web Component</p>
 </slot>
-<div part="rating">
+<div>
     <slot name="rating-star">
-        <div class="rating-star"></div>
+        <div part="icon" class="rating-star"></div>
     </slot>
 </div>
 `;
